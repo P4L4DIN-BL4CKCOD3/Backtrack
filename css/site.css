@@ -4,9 +4,12 @@
     --dark-color: #292929;
     --white-color: #dff3e4;
     --logo-orange: #ff9738;
+    --html-red: rgb(255,69,0);
+    --chocalate: rgb(210,105,30);
+    --charcoal: #A9A9A9;
 }
 body {
-    color:var(--dark-color);
+    background-color:var(--charcoal);
 }
 nav {
     background-color:var(--dark-color);
@@ -23,10 +26,10 @@ footer .social>a {
 }
 footer .social>a:hover {
     opacity: 0.90;
-    color:var(--primary-color) ;
+    color:var(--html-red) ;
 }
 h1,h2,h3,h4,h5,h6 {
-    color:var(--primary-color);
+    color:var(--chocalate);
 }
 .bsicon {
     color: purple;
@@ -41,7 +44,7 @@ h1,h2,h3,h4,h5,h6 {
     color: rgb(11,82,214);
 }
 .checklist >li i {
-    color:var(--primary-color);
+    color:var(--html-red);
 }
 code[class*="language-"],
     pre[class*="language-"] {
@@ -63,3 +66,6 @@ main>.container {
     width: 100%;
 }
 
+.fontlogo {
+    font-family: 'Bangers', cursive;
+}

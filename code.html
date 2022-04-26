@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By P4L4DIN@BL4CKCOD3</title>
+    <title>Backtrack: A Coding Project By P4L4DIN@BL4CKCOD3</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,99 +14,154 @@
     <link rel="stylesheet" href="/css/site.css">
     <link rel="stylesheet" href="/css/prism.css">
     <link rel="icon" type="image/png" href="/img/favicon-32x32.png">
-    
+
 </head>
 
 <body class="d-flex flex-column h-100">
-<!--== NAV SECTION ==-->
-<nav class="navbar navbar-expand-md navbar-dark fixed-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/favicon-32x32.png" class="d-inline-block align-text-top" alt="" width="30" height="30"> APP NAME</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="app.html">The App</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="https://github.com/P4L4DIN-BL4CKCOD3">Git Repo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">About</a>
-                </li>
-            </ul>
+    <!--== NAV SECTION ==-->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/favicon-32x32.png" class="d-inline-block align-text-top" alt="" width="30" height="30">
+                BACKTRACK
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="app.html">The App</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://github.com/P4L4DIN-BL4CKCOD3">Git Repo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!--== MAIN SECTION ==-->
-<main class="flex-shrink-0">
-    <div class="container py-4 px-5 mt-5">
-        <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
-        <div class="row row-cols-1 row-cols-lg-2">
-            <div class="col-lg-8">
-                <pre class="line-numers">
+    <!--== MAIN SECTION ==-->
+    <main class="flex-shrink-0">
+        <div class="container py-4 px-5 mt-5">
+            <h2 class="border-1 border-bottom border-secondary text-dark font-monospace">
+                The Code for Backtrack
+            </h2>
+            <div class="row row-cols-1 row-cols-lg-2">
+                <div class="col-lg-8">
+                    <pre class="line-numbers">
                     <code class="language-javascript">
-                        //Call Hello Word
-                        function HelloWorld(){
-                        alert("Hello World");
-                        }
+                        //The first thing we need to do is to "get" the string from the page.
+//We can do this with the "DOM" or Document Object Model in js. 
+//CONTROLLER FUNCTION
+function getValue(){
+    
+    document.getElementById("alert").classList.add("invisible");    
+    let userString = document.getElementById("userString").value;    
+    let revString = reverseString(userString);    
+    displayString(revString);
+}
+
+//The second thing we want to do is to reverse the string.
+//LOGIC FUNCTION
+function reverseString(userString){
+    
+    //Decleare the "revString" variable into an arry.
+    let revString = [];    
+    //Reverse the decleared array with a "for loop".
+    for (let index = userString.length -1; index >= 0; index--) {
+        revString += userString[index];
+        
+    }
+    return revString;
+}
+
+//The third thing we want to do is to display the results to the user.
+//VIEW FUNCTION
+function displayString(_revstring){
+    
+    //Write the output of "revString" to the page
+    document.getElementById("msg").innerHTML = `Your string reversed is: ${_revstring}`;    
+    //Turn on the "alert box" to diplay the output of "revString"
+    document.getElementById("alert").classList.remove("invisible");
+
+}
                     </code>
                 </pre>
-            </div>
-            <div class="col-lg-4">
-                <p>The Code is structured in one function.</p>
-                <h5>Hello World</h5>
-                <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
-            </div>
-        </div>
-    </div>
-</main>
-
-<!--== FOOTER SECTION ==-->
-<footer class="footer mt-auto py-3">
-    <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-lg-3 gy-2">
-            <div class="col order-last order-lg-first text-light">
-                <div><span class="text-muted">&copy;2022</span> BL4CKCOD3 | p4l4din@bl4ckcod3.com</div>
-            </div>
-            <div class="col d-flex align-items-center justify-content-start justify-content-lg-center">
-                <img src="/img/White logo - no background.png" alt="P4L4DIN-BL4CKCOD3 logo" height="30">
-            </div>
-            <div class="col d-flex align-items-center justify-content-start justify-content-lg-end">
-                <div class="row">
-                    <div class="col social"><a href="#" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a></div>
-                    <div class="col social"><a href="#" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></div>
-                    <div class="col social"><a href="#" target="_blank"><i class="fab fa-github fa-2x"></i></a></div>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-success fw-bold">
+                        function getValue()
+                    </h5>
+                    <p>
+                        Hello World is a function that displays an alert with a message of "Hello World"
+                    </p>
+                    <h5 class="text-success fw-bold">
+                        function reverseString(userString)
+                    </h5>
+                    <p>
+                        Hello World is a function that displays an alert with a message of "Hello World"
+                    </p>
+                    <h5 class="text-success fw-bold">
+                        function displayString(_revstring)
+                    </h5>
+                    <p>
+                        Hello World is a function that displays an alert with a message of "Hello World"
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </main>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-</script>
-<script src="/js/prism.js"></script>
-<script>
-    Prism.plugins.NormalizeWhitespace.setDefaults({
-'remove-trailing': true,
-'remove-indent': true,
-'left-trim': true,
-'right-trim': true
-})
-</script>
+    <!--== FOOTER SECTION ==-->
+    <footer class="footer mt-auto py-3">
+        <div class="container-fluid">
+            <div class="row row-cols-1 row-cols-lg-3 gy-2">
+                <div class="col order-last order-lg-first text-light">
+                    <div><span class="text-muted">&copy;2022</span> BL4CKCOD3 | p4l4din@bl4ckcod3.com</div>
+                </div>
+                <div class="col d-flex align-items-center justify-content-start justify-content-lg-center">
+                    <img src="/img/White logo - no background.png" alt="P4L4DIN-BL4CKCOD3 logo" height="30">
+                </div>
+                <div class="col d-flex align-items-center justify-content-start justify-content-lg-end">
+                    <div class="row">
+                        <div class="col social"><a href="#" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                        </div>
+                        <div class="col social"><a href="#" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+                        </div>
+                        <div class="col social"><a href="https://github.com/P4L4DIN-BL4CKCOD3/Backtrack"
+                                target="_blank"><i class="fab fa-github fa-2x"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+        </script>
+    <script src="/js/prism.js"></script>
+    <script>
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+            'remove-trailing': true,
+            'remove-indent': true,
+            'left-trim': true,
+            'right-trim': true
+        })
+    </script>
 
 
 </body>
+
 </html>
